@@ -1,0 +1,19 @@
+const express = require("express");
+const http = require("http");
+const cors = require("cors");
+require("dotenv").config();
+const app = express();
+
+const PORT = process.env.PORT;
+const server = http.createServer(app);
+
+const options = {
+  origin: JSON.parse(process.env.ALLOWED_ORIGINS),
+  credentials: true,
+};
+
+app.use(express.json());
+app.use(cors(options));
+app.use(require("./Routes/index"));
+
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}.`));
