@@ -16,4 +16,8 @@ app.use(express.json());
 app.use(cors(options));
 app.use(require("./Routes/index"));
 
+app.get("/", (req, res) => {
+  res.send("Hello World! How is your day?");
+});
+
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}.`));
