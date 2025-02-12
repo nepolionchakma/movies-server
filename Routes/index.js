@@ -2,6 +2,8 @@ const Router = require("express");
 const routes = Router();
 
 // routes
+const testData = require("../Routes/testData");
+routes.use("/test", testData);
 // const defPersonsRoutes = require("../Routes/defPersonsRoutes");
 // const defUsersRoutes = require("../Routes/defUsersRoutes");
 
